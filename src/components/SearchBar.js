@@ -58,7 +58,7 @@ function SearchBar() {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<InputGroup>
+				<InputGroup isFullWidth={true}>
 					<Input
 						placeholder="Enter your Ingredients"
 						size="lg"
@@ -69,6 +69,7 @@ function SearchBar() {
 							dispatch(setShow1(false));
 							dispatch(setShow2(false));
 						}}
+						w="full"
 						_focus="white"
 						bg="white"
 					/>

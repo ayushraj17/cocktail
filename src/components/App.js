@@ -7,7 +7,7 @@ import "../App.css";
 function App() {
 	return (
 		<div className="App">
-			<Box mx={[2, 10, 10, 300]} mt={[2, 10]}>
+			<Box mx={[2, 10, 10, 300]} pt={[2, 10]}>
 				<div className="heading">Cocktail</div>
 				<SearchBar />
 			</Box>
