@@ -1,6 +1,8 @@
 import React from "react";
 import { Button, RadioButtonGroup, Flex, Box, Collapse } from "@chakra-ui/core";
 import { Text } from "@chakra-ui/core";
+import { useSelector, useDispatch } from "react-redux";
+import { setShow1, setShow2 } from "../actions";
 
 import Category from "./Category";
 import Alcoholic from "./Alcoholic";
@@ -19,19 +21,20 @@ const CustomRadio = React.forwardRef((props, ref) => {
 	);
 });
 
-export default function Example({ filter }) {
-	const [value, setValue] = React.useState("");
-	const [show1, setShow1] = React.useState(false);
-	const [show2, setShow2] = React.useState(false);
+export default function Example() {
+	const dispatch = useDispatch();
+
+	const show1 = useSelector((state) => state.show1);
+	const show2 = useSelector((state) => state.show2);
 
 	const handleClick = (val) => {
 		if (val === "Category") {
-			setShow1(!show1);
-			setShow2(false);
+			dispatch(setShow1(!show1));
+			dispatch(setShow2(false));
 		}
 		if (val === "Alcoholic") {
-			setShow2(!show2);
-			setShow1(false);
+			dispatch(setShow2(!show2));
+			dispatch(setShow1(false));
 		}
 	};
 
@@ -43,7 +46,6 @@ export default function Example({ filter }) {
 				</Box>
 				<RadioButtonGroup
 					onChange={(val) => {
-						setValue(val);
 						handleClick(val);
 					}}
 					isInline

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchByIngredient } from "../actions";
+import { fetchByIngredient, setShow2, setShow1 } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	Input,
@@ -16,7 +16,7 @@ import Filter from "./Filter";
 
 function SearchBar() {
 	const [query, setQuery] = useState("");
-	// const [filter, setFilter] = useState("false");
+
 	const [isLoading, setIsLoading] = useState(false);
 	const dispatch = useDispatch();
 	const data = useSelector((state) => state.ingredients.drinks);
@@ -31,6 +31,7 @@ function SearchBar() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
 		setIsLoading(true);
 	};
 
@@ -64,6 +65,10 @@ function SearchBar() {
 						variant="filled"
 						value={query}
 						onChange={(e) => setQuery(e.target.value)}
+						onClick={() => {
+							dispatch(setShow1(false));
+							dispatch(setShow2(false));
+						}}
 						_focus="white"
 						bg="white"
 					/>

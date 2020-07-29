@@ -28,7 +28,7 @@ function DrinkDisplay({ src, title }) {
 					lineHeight="tight"
 					isTruncated
 				>
-					<Text color="gray">{title}</Text>
+					<Text color="gray	">{title}</Text>
 				</Box>
 			</Box>
 		</div>

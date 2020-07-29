@@ -43,3 +43,16 @@ export const fetchByAlcohol = (query) => async (dispatch) => {
 
 	dispatch({ type: "FETCH_AL", payload: response.data });
 };
+
+export const setShow1 = (value) => {
+	return {
+		type: "SHOW_1",
+		payload: value,
+	};
+};
+export const setShow2 = (value) => {
+	return {
+		type: "SHOW_2",
+		payload: value,
+	};
+};
