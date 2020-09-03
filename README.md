@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+View this project on cocktail-six.vercel.app
+
 
 ## Available Scripts
 
